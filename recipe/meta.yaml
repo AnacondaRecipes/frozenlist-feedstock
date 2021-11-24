@@ -11,20 +11,20 @@ source:
   sha256: 68201be60ac56aff972dc18085800b6ee07973c49103a8aba669dee3d71079de
 
 build:
-  number: 1
-  skip: true   # [py2k]
+  number: 0
+  skip: True   # [py<36]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - {{ compiler('c') }}
   host:
+    - python
     - pip
-    - python
+    - setuptools
+    - wheel
   run:
-    - python
+    - python >=3.6
 
 test:
   imports:
@@ -38,7 +38,10 @@ about:
   home: https://github.com/aio-libs/frozenlist
   summary: A list-like structure which implements collections.abc.MutableSequence
   license: Apache-2.0
+  license_family: Apache
   license_file: LICENSE
+  dev_url: https://github.com/aio-libs/frozenlist
+  doc_url: https://frozenlist.readthedocs.io/en/latest/
 
 extra:
   recipe-maintainers:
