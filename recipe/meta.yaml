@@ -36,7 +36,7 @@ test:
 
 about:
   home: https://github.com/aio-libs/frozenlist
-  summary: A list-like structure which implements collections.abc.MutableSequence
+  summary: A list-like structure which implements collections.abc.MutableSequence.
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
