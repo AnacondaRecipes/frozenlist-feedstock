@@ -1,6 +1,5 @@
 {% set name = "frozenlist" %}
-{% set version = "1.2.0" %}
-
+{% set version = "1.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/frozenlist-{{ version }}.tar.gz
-  sha256: 68201be60ac56aff972dc18085800b6ee07973c49103a8aba669dee3d71079de
+  sha256: 58bcc55721e8a90b88332d6cd441261ebb22342e238296bb330968952fbb3a6a
 
 build:
-  number: 0
-  skip: True   # [py<36]
+  skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   build:
@@ -24,7 +23,7 @@ requirements:
     - setuptools
     - wheel
   run:
-    - python >=3.6
+    - python
 
 test:
   imports:
@@ -37,12 +36,13 @@ test:
 about:
   home: https://github.com/aio-libs/frozenlist
   summary: A list-like structure which implements collections.abc.MutableSequence
+  description: A list-like structure which implements collections.abc.MutableSequence
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
   dev_url: https://github.com/aio-libs/frozenlist
-  doc_url: https://frozenlist.readthedocs.io/en/latest/
+  doc_url: https://frozenlist.aio-libs.org/
 
 extra:
   recipe-maintainers:
-    - ocefpaf
+    - cbouss
