@@ -1,2 +1,8 @@
 build_env_vars:
   ANACONDA_ROCKET_ENABLE_PY314 : yes
+
+channels:
+  - https://staging.continuum.io/pbp/fs/pretend-feedstock/pr2/b07d20f
+  - https://staging.continuum.io/pbp/fs/packaging-feedstock/pr16/239c2c5
+  - https://staging.continuum.io/pbp/fs/hatchling-feedstock/pr9/f1bef63
+  - https://staging.continuum.io/pbp/fs/expandvars-feedstock/pr3/dc95d68
