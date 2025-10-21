@@ -25,7 +25,7 @@ requirements:
     - cython >=3.1.4
     - expandvars
     - pip
-    - setuptools>=47
+    - setuptools >=47
     - tomli  # [py<311]
     - wheel
   run:
